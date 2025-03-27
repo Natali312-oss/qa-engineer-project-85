@@ -1,1 +1,285 @@
+---
+- summary: |
+   Проверка входа пользователя с существующими электронной почтой и паролем
+requirement: |
+   При верном вводе электронной почты и пароля пользователь должен войти в систему
+prerequisites: |
+   Открыта страница входа в систему
+test-data: |
+   Тестовые данные
+   Email = natalia-neko-chan@mail.ru Password = co159de*
+steps:
+   - Вводим Email
+   - Вводим Password
+   - Кликаем кнопку "Submit"
+expected-result: |
+    Пользователь должен попасть на главную страницу
 
+- summary: |
+   Проверка входа пользователя с несуществующей электронной почтой 
+requirement: |
+   При вводе несуществующей электронной почты  пользователь должен получить сообщение об ошибке
+prerequisites:
+   Открыта страница входа в систему
+test-data: |
+   Email = Lolita@mail.ru Password = co159de*
+steps:
+   - Вводим Email 
+   - Вводим Password 
+   - Кликаем кнопку "Submit"
+expected-result: |
+   Выходит сообщение об ошибке 
+
+- summary: |
+   Проверка входа пользователя с несуществующим паролем 
+requirement: |
+   При вводе несуществующего пароля пользователь должен получить сообщение об ошибке
+prerequisites:
+   Открыта страница входа в систему
+test-data: |
+   Email = natalia-neko-chan@mail.ru Password = Lo2*lita
+steps:
+   - Вводим Email 
+   - Вводим Password 
+   - Кликаем кнопку "Submit"
+expected-result: |
+   Выходит сообщение об ошибке.
+
+- summary: |
+   Проверка создания игры с ботом
+requirement: |
+   После выбора баттла с ботом открывается окно с начавшейся игрой 
+prerequisites:
+   - Нажата кнопка "CREATE A GAME"
+   - Выбраны по умолчанию Level, Time control, Choose task by name or tags
+test-data: |
+   no data
+steps:
+   - Выбираем "Game Type" - "with a bot" 
+   - Кликаем кнопку "Create battle"
+expected-result: |
+   Игра началась
+
+- summary: |
+   Проверка создания игры с другим пользователем
+requirement: |
+   После выбора баттла с другим пользователем открывается главная страница с ожиданием в LOBBY отклика противника
+prerequisites:
+   - Нажата кнопка "CREATE A GAME"
+   - Выбраны по умолчанию Level, Time control, Choose task by name or tags
+test-data: |
+   no data
+steps:
+   - Выбираем "Game Type" - "with a other user" 
+   - Кликаем кнопку "Create battle"
+expected-result: |
+   Открыта главная страница с ожиданием в LOBBY отклика противника
+     
+- summary: |
+   Проверка создания игры с другом
+requirement: |
+   После выбора баттла с другом открывается главная страница c горящим оповещением о приглашении друга на кнопке с двумя мечами
+prerequisites:
+   - Нажата кнопка "CREATE A GAME"
+   - Выбраны по умолчанию Level, Time control, Choose task by name or tags
+test-data: |
+   no data
+steps:
+   - Выбираем "Game Type" - "with a friend"
+   - Выбирам "Choose opponent" любого предложенного пользователя
+   - Кликаем кнопку "Create battle"
+expected-result: |
+   Открыта главная страница, горит оповещение о приглашение друга на кнопке с двумя мечами
+
+- summary: |
+   Проверка функциональности выпадающего списка с выбором языка программирования
+requirement: |
+   При клике на стрелку выпадающего списка отображается список языков программирования
+prerequisites:
+   - Нажата кнопка "CREATE A GAME"
+   - Выбраны по умолчанию Level, Time control, Choose task by name or tags
+test-data: |
+   no data
+steps:
+   - Выбираем "Game Type" - "with a bot"
+   - Кликаем на стрелку выпадающего списка
+expected-result: |
+   Кнопка выпадающего списка работает, отображаются языки программирования
+
+- summary: |
+   Проверка выбора языка программирования
+requirement: |
+   При клике на язык программирования, выбранный язык программирования становится рабочим
+prerequisites:
+   - Нажата кнопка "CREATE A GAME"
+   - Выбраны по умолчанию Level, Time control, Choose task by name or tags
+test-data: |
+   no data
+steps:
+   - Выбираем "Game Type" - "with a bot"
+   - Кликаем на стрелку выпадающего списка
+   - Выбираем любой язык программирования
+expected-result: |
+   Язык программирования сменился на выбранный
+
+- summary: |
+   Проверка функциональности кнопки смены фона  
+requirement: |
+   При клике на кнопку при отображении символа солнца цвет фона изменяется на белый, при отображении символа месяца - на черный  
+prerequisites:
+   - Нажата кнопка "CREATE A GAME"
+   - Выбраны по умолчанию Level, Time control, Choose task by name or tags
+test-data: |
+   no data
+steps:
+   - Выбираем "Game Type" - "with a bot"
+   - Кликаем на кнопку при отображении символа месяца
+   -Кликаем на кнопку при отображении символа солнца
+expected-result:
+   Цвет фона меняется
+
+- summary: |
+   Проверка запуска проверки написанного кода
+requirement: |
+   При нажатии на кнопку "Run" запускается проверка написанного пользователем кода
+prerequisites:
+   - Нажата кнопка "CREATE A GAME"
+   - Выбраны по умолчанию Level, Time control, Choose task by name or tags
+test-data: |
+   no data
+steps:
+   - Выбираем "Game Type" - "with a bot"
+   - Кликаем на кнопку "Run"
+expected-result:
+   Проверка написанного кода запускается
+
+- summary: |
+   Проверка права игрока сдаться во время игры
+requirement: |
+   При выборе "Give up" пользователю открывается окно с сообщение о проигрыше
+prerequisites:
+   - Нажата кнопка "CREATE A GAME"
+   - Выбраны по умолчанию Level, Time control, Choose task by name or tags
+test-data: |
+   no data
+steps:
+   - Выбираем "Game Type" - "with a bot"
+   - Кликаем на кнопку с тремя точками
+   - Выбираем "Give up"
+   - Подтверждаем свой выбор "Give up" 
+expected-result:
+   Открыто окно с сообщением о проигрыше
+
+- summary: |
+   Проверка сброса решения
+requirement: |
+   При выборе "Reset solution" решение игрока сбрасывается до исходного состояния
+prerequisites:
+   - Нажата кнопка "CREATE A GAME"
+   - Выбраны по умолчанию Level, Time control, Choose task by name or tags
+test-data: |
+   no data
+steps:
+   - Выбираем "Game Type" - "with a bot"
+   - Вбиваем произвольное слово в рабочую область
+   - Кликаем на кнопку с тремя точками
+   - Выбираем "Reset solution" 
+expected-result:
+   Решение игрока сбросилось   
+
+- summary: |
+   Проверка возврата на главную страницу 
+requirement: |
+   При клике на кнопку "Hexlet Codebattle" пользователь возвращается на главную страницу
+prerequisites:
+   - Открыта страница "My Profile"
+test-data: |
+   no data
+steps:
+   - Кликаем на кнопку "Hexlet Codebattle"
+expected-result:
+   Открыта главная страница 
+
+- summary: |
+   Проверка отмены приглашения в игру друга
+requirement: |
+   После отмены приглашения, оповещение о приглашении друга не отображается на кнопке с двумя мечами
+prerequisites:
+   - Нажата кнопка "CREATE A GAME"
+   - Выбраны по умолчанию Level, Time control, Choose task by name or tags
+test-data: |
+   no data
+steps:
+   - Выбираем "Game Type" - "with a friend"
+   - Выбирам "Choose opponent" любого предложенного пользователя
+   - Кликаем кнопку "Create battle"
+   - Кликаем кнопку с двумя мечами
+   - Кликаем кнопку "Cancel"
+expected-result: |
+   Открыта главная страница, оповещение не отображается 
+
+- summary: |
+   Проверка отмены игры с другим пользователем
+requirement: |
+   После отмены игры с другим пользователем  ожидание в LOBBY отклика противника не отображается
+prerequisites:
+   - Нажата кнопка "CREATE A GAME"
+   - Выбраны по умолчанию Level, Time control, Choose task by name or tags
+test-data: |
+   no data
+steps:
+   - Выбираем "Game Type" - "with a other user" 
+   - Кликаем кнопку "Create battle"
+   - Кликаем кнопку "Х" рядом с кнопкой "Continue"
+expected-result: |
+   Ожидание в LOBBY отклика противника не отображается      
+
+- summary: |
+   Проверка выбора уровня сложности
+requirement: |
+   После выбора уровня сложности он отображается в задании игры
+prerequisites:
+   - Нажата кнопка "CREATE A GAME"
+   - Выбраны по умолчанию Time control, Choose task by name or tags 
+test-data: |
+   no data
+steps:
+   - Выбираем "Game Type" - "with a bot"
+   - Выбираем уровень сложности с тремя звездами
+   - Кликаем кнопку "Create battle"
+expected-result: |
+   В открывшейся игре рядом с заданием отображается выбранный уровень сложности
+
+- summary: |
+   Проверка выбора времени на выполнение задания
+requirement: |
+   После выбора времени, это время отводится на игру
+prerequisites:
+   - Нажата кнопка "CREATE A GAME"
+   - Выбраны по умолчанию Level, Choose task by name or tags 
+test-data: |
+   no data
+steps:
+   - Выбираем "Game Type" - "with a bot"
+   - Выбираем Time control 3 min
+   - Кликаем кнопку "Create battle"
+expected-result: |
+   В открывшейся игре отображается выбранный отсчет времени
+
+- summary: |
+   Проверка окончания игры, когда время вышло
+requirement: |
+   Когда выбранное время истечет, игра заканчиввается
+prerequisites:
+   - Нажата кнопка "CREATE A GAME"
+   - Выбраны по умолчанию Level, Choose task by name or tags 
+test-data: |
+   no data
+steps:
+   - Выбираем "Game Type" - "with a bot"
+   - Выбираем Time control 3 min
+   - Кликаем кнопку "Create battle"
+   - Ждем когда время истечет 
+expected-result: |
+   Отображается оповещение "Time is up."
+   
