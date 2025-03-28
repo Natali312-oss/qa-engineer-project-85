@@ -116,8 +116,8 @@
   status: pass  
 
 - summary: |
-    
-  status: pass  
+Проверка смены звука в настройках на "Standart"
+  status: fail 
 
 - summary: |
     
