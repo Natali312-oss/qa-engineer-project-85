@@ -429,26 +429,6 @@ expected-result: |
    Открылось модальное окно с сообщением "Woohoo, you're Champion!!!!!"
 
 - summary: |
-   Проверка сообщения о поражении
-requirement: |
-   После поражения в игре, выходит модальное окно с сообщение о поражении
-prerequisites:
-   - Выполнен вход в систему
-   - Нажата кнопка "CREATE A GAME"
-test-data: |
-   no data
-steps:
-   - Выбираем Level одну звезду
-   - Выбираем "Game Type" - "with a bot"
-   - Выбираем "Time control" 3 min
-   - Выбираем в выпадающем списке "Choose task by name or tags" - rect_area
-   - Кликаем кнопку "Create battle"
-   - Выбираем язык NodeJS 20.11.1
-   - Дописываем в 5 строку return width,length;
-expected-result: |
-   Открылось модальное окно с сообщением "Woohoo, you're Champion!!!!!"
-
-- summary: |
    Проверка перевода текста задания на русский язык
 requirement: |
    После выбора русского языка, текст задания переводится на русский язык
