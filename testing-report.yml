@@ -100,10 +100,6 @@
   status: pass  
 
 - summary: |
-   Проверка сообщения о поражении    
-  status: pass  
-
-- summary: |
    Проверка перевода текста задания на русский язык
   status: pass  
 
@@ -118,7 +114,3 @@
 - summary: |
 Проверка смены звука в настройках на "Standart"
   status: fail 
-
-- summary: |
-    
-  status: pass  
