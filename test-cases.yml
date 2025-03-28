@@ -498,6 +498,22 @@ steps:
 expected-result: |
    Изменяется список игроков
 
+- summary: |
+   Проверка смены звука в настройках на "Standart"
+requirement: |
+   При изменении типа звука на "Standart", звук выбрается и сохраняется
+prerequisites:
+   - Выполнен вход в систему
+   - Открыта главная страница игры
+test-data: |
+   no data
+steps: 
+   - Кликаем кнопку Nick name
+   - Кликаем "Settings"
+   - Кликаем "Standart"
+expected-result: |
+   Звук выбрался, сохранился
+
 
 
    
