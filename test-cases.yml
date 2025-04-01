@@ -185,7 +185,7 @@
      Выполнен вход в систему
   test-data: |
      no data
-     steps:
+  steps:
      - Нажимаем кнопку "CREATE A GAME"
      - Выбираем Level одну звезду
      - Выбираем "Game Type" - "with a bot"
