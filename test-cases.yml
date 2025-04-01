@@ -1,175 +1,175 @@
 ---
 - summary: |
    Проверка входа пользователя с существующими электронной почтой и паролем 
-requirement: |
+  requirement: |
    При верном вводе электронной почты и пароля пользователь должен войти в систему
-prerequisites: |
+  prerequisites: |
    Открыта страница входа в систему
-test-data: |
+  test-data: |
    Тестовые данные
    Email = natalia-neko-chan@mail.ru Password = co159de*
-steps:
+  steps:
    - Вводим Email
    - Вводим Password
    - Кликаем кнопку "Submit"
-expected-result: |
+  expected-result: |
     Пользователь должен попасть на главную страницу
 
 - summary: |
    Проверка входа пользователя с несуществующей электронной почтой 
-requirement: |
+  requirement: |
    При вводе несуществующей электронной почты  пользователь должен получить сообщение об ошибке
-prerequisites:
+  prerequisites:
    Открыта страница входа в систему
-test-data: |
+  test-data: |
    Email = Lolita@mail.ru Password = co159de*
-steps:
+  steps:
    - Вводим Email 
    - Вводим Password 
    - Кликаем кнопку "Submit"
-expected-result: |
+  expected-result: |
    Выходит сообщение об ошибке 
 
 - summary: |
    Проверка входа пользователя с несуществующим паролем 
-requirement: |
+  requirement: |
    При вводе несуществующего пароля пользователь должен получить сообщение об ошибке
-prerequisites:
+  prerequisites:
    Открыта страница входа в систему
-test-data: |
+  test-data: |
    Email = natalia-neko-chan@mail.ru Password = Lo2*lita
-steps:
+  steps:
    - Вводим Email 
    - Вводим Password 
    - Кликаем кнопку "Submit"
-expected-result: |
+  expected-result: |
    Выходит сообщение об ошибке.
 
 - summary: |
    Проверка создания игры с ботом
-requirement: |
+  requirement: |
    После выбора баттла с ботом открывается окно с начавшейся игрой 
-prerequisites:
+  prerequisites:
    - Выполнен вход в систему
    - Нажата кнопка "CREATE A GAME"
    - Выбраны по умолчанию Level, Time control, Choose task by name or tags
-test-data: |
+  test-data: |
    no data
-steps:
+  steps:
    - Выбираем "Game Type" - "with a bot" 
    - Кликаем кнопку "Create battle"
-expected-result: |
+  expected-result: |
    Игра началась
 
 - summary: |
    Проверка создания игры с другим пользователем
-requirement: |
+  requirement: |
    После выбора баттла с другим пользователем открывается главная страница с ожиданием в LOBBY отклика противника
-prerequisites:
+  prerequisites:
    - Выполнен вход в систему
    - Нажата кнопка "CREATE A GAME"
    - Выбраны по умолчанию Level, Time control, Choose task by name or tags
-test-data: |
+  test-data: |
    no data
-steps:
+  steps:
    - Выбираем "Game Type" - "with a other user" 
    - Кликаем кнопку "Create battle"
-expected-result: |
+  expected-result: |
    Открыта главная страница с ожиданием в LOBBY отклика противника
      
 - summary: |
    Проверка создания игры с другом
-requirement: |
+  requirement: |
    После выбора баттла с другом открывается главная страница c горящим оповещением о приглашении друга на кнопке с двумя мечами
-prerequisites:
+  prerequisites:
    - Выполнен вход в систему
    - Нажата кнопка "CREATE A GAME"
    - Выбраны по умолчанию Level, Time control, Choose task by name or tags
-test-data: |
+  test-data: |
    no data
-steps:
+  steps:
    - Выбираем "Game Type" - "with a friend"
    - Выбирам "Choose opponent" любого предложенного пользователя
    - Кликаем кнопку "Create battle"
-expected-result: |
+  expected-result: |
    Открыта главная страница, горит оповещение о приглашение друга на кнопке с двумя мечами
 
 - summary: |
    Проверка функциональности выпадающего списка с выбором языка программирования
-requirement: |
+  requirement: |
    При клике на стрелку выпадающего списка отображается список языков программирования
-prerequisites:
+  prerequisites:
    - Выполнен вход в систему
    - Нажата кнопка "CREATE A GAME"
    - Выбраны по умолчанию Level, Time control, Choose task by name or tags
-test-data: |
+  test-data: |
    no data
-steps:
+  steps:
    - Выбираем "Game Type" - "with a bot"
    - Кликаем на стрелку выпадающего списка
-expected-result: |
+  expected-result: |
    Кнопка выпадающего списка работает, отображаются языки программирования
 
 - summary: |
    Проверка выбора языка программирования
-requirement: |
+  requirement: |
    При клике на язык программирования, выбранный язык программирования становится рабочим
-prerequisites:
+  prerequisites:
    - Выполнен вход в систему
    - Нажата кнопка "CREATE A GAME"
    - Выбраны по умолчанию Level, Time control, Choose task by name or tags
-test-data: |
+  test-data: |
    no data
-steps:
+  steps:
    - Выбираем "Game Type" - "with a bot"
    - Кликаем на стрелку выпадающего списка
    - Выбираем любой язык программирования
-expected-result: |
+  expected-result: |
    Язык программирования сменился на выбранный
 
 - summary: |
    Проверка функциональности кнопки смены фона  
-requirement: |
+  requirement: |
    При клике на кнопку при отображении символа солнца цвет фона изменяется на белый, при отображении символа месяца - на черный  
-prerequisites:
+  prerequisites:
    - Выполнен вход в систему
    - Нажата кнопка "CREATE A GAME"
    - Выбраны по умолчанию Level, Time control, Choose task by name or tags
-test-data: |
+  test-data: |
    no data
-steps:
+  steps:
    - Выбираем "Game Type" - "with a bot"
    - Кликаем на кнопку при отображении символа месяца
    -Кликаем на кнопку при отображении символа солнца
-expected-result:
+  expected-result:
    Цвет фона меняется
 
 - summary: |
    Проверка функциональности кнопки Run 
-requirement: |
+  requirement: |
    При нажатии на кнопку "Run" запускается проверка написанного пользователем кода
-prerequisites:
+  prerequisites:
    - Выполнен вход в систему
    - Нажата кнопка "CREATE A GAME"
    - Выбраны по умолчанию Level, Time control, Choose task by name or tags
-test-data: |
+  test-data: |
    no data
-steps:
+  steps:
    - Выбираем "Game Type" - "with a bot"
    - Кликаем на кнопку "Run"
-expected-result:
+  expected-result:
    Проверка написанного кода запускается
 
 - summary: |
    Проверка отсутствия ошибок при проверке правильно введенного кода
-requirement: |
+  requirement: |
    При правильно введенном коде тесты выделяются зеленым и выходит сообщение "Yay! All tests passed"
-prerequisites:
+  prerequisites:
    - Выполнен вход в систему
    - Нажата кнопка "CREATE A GAME"
-test-data: |
+  test-data: |
    no data
-steps:
+  steps:
    - Выбираем Level одну звезду
    - Выбираем "Game Type" - "with a bot"
    - Выбираем "Time control" 3 min
@@ -178,19 +178,19 @@ steps:
    - Выбираем язык NodeJS 20.11.1
    - Дописываем в 5 строку return width*length;
    - Кликаем кнопку "Run"
-expected-result: |
+  expected-result: |
    Тесты выделены зеленым, появилось сообщение "Yay! All tests passed"
 
    - summary: |
    Проверка отсутствия ошибок при проверке неправильно введенного кода
-requirement: |
+  requirement: |
    При неправильно введенном коде тесты выделяются красным и выходит сообщение "Tests failed!"
-prerequisites:
+  prerequisites:
    - Выполнен вход в систему
    - Нажата кнопка "CREATE A GAME"
-test-data: |
+  test-data: |
    no data
-steps:
+  steps:
    - Выбираем Level одну звезду
    - Выбираем "Game Type" - "with a bot"
    - Выбираем "Time control" 3 min
@@ -199,224 +199,224 @@ steps:
    - Выбираем язык NodeJS 20.11.1
    - Дописываем в 5 строку return width-length;
    - Кликаем кнопку "Run"
-expected-result: |
+  expected-result: |
    Тесты выделены красным, появилось сообщение "Tests failed!"
    
 - summary: |
    Проверка права игрока сдаться во время игры
-requirement: |
+  requirement: |
    При выборе "Give up" пользователю открывается окно с сообщение о проигрыше
-prerequisites:
+  prerequisites:
    - Выполнен вход в систему
    - Нажата кнопка "CREATE A GAME"
    - Выбраны по умолчанию Level, Time control, Choose task by name or tags
-test-data: |
+  test-data: |
    no data
-steps:
+  steps:
    - Выбираем "Game Type" - "with a bot"
    - Кликаем на кнопку с тремя точками
    - Выбираем "Give up"
    - Подтверждаем свой выбор "Give up" 
-expected-result:
+  expected-result:
    Открыто окно с сообщением "If you read this you've lost the game"
 
 - summary: |
    Проверка сброса решения
-requirement: |
+  requirement: |
    При выборе "Reset solution" решение игрока сбрасывается до исходного состояния
-prerequisites:
+  prerequisites:
    - Выполнен вход в систему
    - Нажата кнопка "CREATE A GAME"
    - Выбраны по умолчанию Level, Time control, Choose task by name or tags
-test-data: |
+  test-data: |
    no data
-steps:
+  steps:
    - Выбираем "Game Type" - "with a bot"
    - Вбиваем произвольное слово в рабочую область
    - Кликаем на кнопку с тремя точками
    - Выбираем "Reset solution" 
-expected-result:
+  expected-result:
    Решение игрока сбросилось   
 
 - summary: |
    Проверка возврата на главную страницу 
-requirement: |
+  requirement: |
    При клике на кнопку "Hexlet Codebattle" пользователь возвращается на главную страницу
-prerequisites:
+  prerequisites:
    - Выполнен вход в систему
    - Открыта страница "My Profile"
-test-data: |
+  test-data: |
    no data
-steps:
+  steps:
    - Кликаем на кнопку "Hexlet Codebattle"
-expected-result:
+  expected-result:
    Открыта главная страница 
 
 - summary: |
    Проверка отмены приглашения в игру друга
-requirement: |
+  requirement: |
    После отмены приглашения, оповещение о приглашении друга не отображается на кнопке с двумя мечами
-prerequisites:
+  prerequisites:
    - Выполнен вход в систему
    - Нажата кнопка "CREATE A GAME"
    - Выбраны по умолчанию Level, Time control, Choose task by name or tags
-test-data: |
+  test-data: |
    no data
-steps:
+  steps:
    - Выбираем "Game Type" - "with a friend"
    - Выбирам "Choose opponent" любого предложенного пользователя
    - Кликаем кнопку "Create battle"
    - Кликаем кнопку с двумя мечами
    - Кликаем кнопку "Cancel"
-expected-result: |
+  expected-result: |
    Открыта главная страница, оповещение не отображается 
 
 - summary: |
    Проверка отмены игры с другим пользователем
-requirement: |
+  requirement: |
    После отмены игры с другим пользователем  ожидание в LOBBY отклика противника не отображается
-prerequisites:
+  prerequisites:
    - Выполнен вход в систему
    - Нажата кнопка "CREATE A GAME"
    - Выбраны по умолчанию Level, Time control, Choose task by name or tags
-test-data: |
+  test-data: |
    no data
-steps:
+  steps:
    - Выбираем "Game Type" - "with a other user" 
    - Кликаем кнопку "Create battle"
    - Кликаем кнопку "Х" рядом с кнопкой "Continue"
-expected-result: |
+  expected-result: |
    Ожидание в LOBBY отклика противника не отображается      
 
 - summary: |
    Проверка выбора уровня сложности
-requirement: |
+  requirement: |
    После выбора уровня сложности он отображается в задании игры
-prerequisites:
+  prerequisites:
    - Выполнен вход в систему
    - Нажата кнопка "CREATE A GAME"
    - Выбраны по умолчанию Time control, Choose task by name or tags 
-test-data: |
+  test-data: |
    no data
-steps:
+  steps:
    - Выбираем "Game Type" - "with a bot"
    - Выбираем уровень сложности с тремя звездами
    - Кликаем кнопку "Create battle"
-expected-result: |
+  expected-result: |
    В открывшейся игре рядом с заданием отображается выбранный уровень сложности
 
 - summary: |
    Проверка точности запуска таймера на выполнение задания
-requirement: |
+  requirement: |
    При создании игры выбор времени запускает таймер с обратным отсчетом в начавшейся игре
-prerequisites:
+  prerequisites:
    - Выполнен вход в систему
    - Нажата кнопка "CREATE A GAME"
    - Выбраны по умолчанию Level, Choose task by name or tags 
-test-data: |
+  test-data: |
    no data
-steps:
+  steps:
    - Выбираем "Game Type" - "with a bot"
    - Выбираем Time control 3 min
    - Кликаем кнопку "Create battle"
-expected-result: |
+  expected-result: |
    В открывшейся игре отображается таймер с обратным отсчетом на 3 min
 
 - summary: |
    Проверка окончания игры, когда время, отведенное на игру, закончилось
-requirement: |
+  requirement: |
    Когда время отведенное на игру закончилось, игра заканчивается
-prerequisites:
+  prerequisites:
    - Выполнен вход в систему
    - Нажата кнопка "CREATE A GAME"
    - Выбраны по умолчанию Level, Choose task by name or tags 
-test-data: |
+  test-data: |
    no data
-steps:
+  steps:
    - Выбираем "Game Type" - "with a bot"
    - Выбираем Time control 3 min
    - Кликаем кнопку "Create battle"
    - Ждем когда время истечет и появится сообщение "Time is up."
-expected-result: |
+  expected-result: |
    Отображается сообщение  "GAME OVER"
    
 - summary: |
    Проверка просмотра состязаний в качестве зрителя в режиме реального времени
-requirement: |
+  requirement: |
    При нажатии на кнопку "show" зритель переходит в игру 
-prerequisites:
+  prerequisites:
    - Выполнен вход в систему
    - Открыто "LOBBY" на главной странице
-test-data: |
+  test-data: |
    no data
-steps:
+  steps:
    - Кликаем кнопку "show"
-expected-result: |
+  expected-result: |
    Произошел переход в игру в режиме реального времени
 
 - summary: |
    Проверка написания сообщений в чате во время игры игроками
-requirement: |
+  requirement: |
    После начала игры игрок может отправлять сообщения в чате
-prerequisites:
+  prerequisites:
    - Выполнен вход в систему
    - Нажата кнопка "CREATE A GAME"
    - Выбраны по умолчанию Level, Time control, Choose task by name or tags
-test-data: |
+  test-data: |
    no data
-steps:
+  steps:
    - Выбираем "Game Type" - "with a bot" 
    - Кликаем кнопку "Create battle"
    - Ставим курсор в поле ввода сообщений
    - Пишем сообщение "Hi, friend"
    - Кликаем кнопку "Send"
-expected-result: |
+  expected-result: |
     Сообщение отправлено и отображено в чате
 
 - summary: |
    Проверка просмотра кода соперника во время игры
-requirement: |
+  requirement: |
    После начала игры возможен просмотр кода соперника
-prerequisites:
+  prerequisites:
    - Выполнен вход в систему
    - Нажата кнопка "CREATE A GAME"
    - Выбраны по умолчанию Level, Time control, Choose task by name or tags
-test-data: |
+  test-data: |
    no data
-steps:
+  steps:
    - Выбираем "Game Type" - "with a bot" 
    - Кликаем кнопку "Create battle"
-expected-result: |
+  expected-result: |
    Виден код соперника
 
 - summary: |
    Проверка звукового оповещения когда время вышло
-requirement: |
+  requirement: |
    Когда время вышло,  в игре должен быть слышен звук 
-prerequisites:
+  prerequisites:
    - Выполнен вход в систему
    - Нажата кнопка "CREATE A GAME"
    - Выбраны по умолчанию Level, Choose task by name or tags
-test-data: |
+  test-data: |
    no data
-steps:
+  steps:
    - Выбираем "Game Type" - "with a bot"
    - Выбираем"Time control" 3 min
    - Кликаем кнопку "Create battle"
    - Ждем когда время выйдет и появится сообщение "Time is up."
-expected-result: |
+  expected-result: |
    Прозвучал звуковое оповещение
 
 - summary: |
    Проверка сообщения о победе 
-requirement: |
+  requirement: |
    После победы в игре, выходит модальное окно с сообщение о победе
-prerequisites:
+  prerequisites:
    - Выполнен вход в систему
    - Нажата кнопка "CREATE A GAME"
-test-data: |
+  test-data: |
    no data
-steps:
+  steps:
    - Выбираем Level одну звезду
    - Выбираем "Game Type" - "with a bot"
    - Выбираем "Time control" 3 min
@@ -425,74 +425,74 @@ steps:
    - Выбираем язык NodeJS 20.11.1
    - Дописываем в 5 строку return width*length;
    - Кликаем кнопку "Run"
-expected-result: |
+  expected-result: |
    Открылось модальное окно с сообщением "Woohoo, you're Champion!!!!!"
 
 - summary: |
    Проверка перевода текста задания на русский язык
-requirement: |
+  requirement: |
    После выбора русского языка, текст задания переводится на русский язык
-prerequisites:
+  prerequisites:
    - Выполнен вход в систему
    - Нажата кнопка "CREATE A GAME"
    - Выбраны по умолчанию Level, Time control, Choose task by name or tags
    - Выбран английский язык
-test-data: |
+  test-data: |
    no data
-steps:
+  steps:
    - Выбираем "Game Type" - "with a bot" 
    - Кликаем кнопку "Create battle"
    - Кликаем выпадающий список смены языка
    - Выбираем "Ru"
-expected-result: |
+  expected-result: |
    Текст задания перевелся на русский язык
 
 - summary: |
    Проверка просмотра рейтинга игроков
-requirement: |
+  requirement: |
    После перехода на страницу с рейтингом игроков, отображается список игроков
-prerequisites:
+  prerequisites:
    - Выполнен вход в систему
    - Открыта главная страница игры
-test-data: |
+  test-data: |
    no data
-steps: 
+  steps: 
    - Кликаем кнопку "Top list"
-expected-result: |
+  expected-result: |
    Список игроков отображается
 
 - summary: |
    Проверка фильтрации по рейтингу игроков
-requirement: |
+  requirement: |
    При выборе фильтра меняется список игроков в зависимости от рейтинга за неделю, месяц, весь переод
-prerequisites:
+  prerequisites:
    - Выполнен вход в систему
    - Открыта главная страница игры
-test-data: |
+  test-data: |
    no data
-steps: 
+  steps: 
    - Кликаем кнопку "Top list"
    - Кликаем weekly
    - Кликаем monthly
    - Кликаем total
-expected-result: |
+  expected-result: |
    Изменяется список игроков
 
 - summary: |
    Проверка смены звука в настройках на тип "Standart"
-requirement: |
+  requirement: |
    При изменении типа звука на "Standart", звук выбирается и сохраняется
-prerequisites:
+  prerequisites:
    - Выполнен вход в систему
    - Открыта главная страница игры
-test-data: |
+  test-data: |
    no data
-steps: 
+  steps: 
    - Кликаем на Nick name
    - Кликаем "Settings"
    - Кликаем в разделе Select sound type - "Standart"
    - Кликаем "Save"
-expected-result: |
+  expected-result: |
    Тип звука сохранился
 
 
