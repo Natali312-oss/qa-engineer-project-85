@@ -161,7 +161,7 @@
   requirement: |
      При правильно введенном коде тесты выделяются зеленым и выходит сообщение "Yay! All tests passed"
   prerequisites:
-     - Выполнен вход в систему
+     Выполнен вход в систему
   test-data: |
      no data
   steps:
